@@ -203,6 +203,7 @@ class _AlertDialogPendingState extends State<AlertDialogPending> {
                                       style: const TextStyle(
                                           fontWeight: FontWeight.bold,
                                           color: Colors.black38)),
+                                  // ignore: prefer_const_constructors
                                   Text(" | "),
                                   Text(helper.reviewMean,
                                       style: const TextStyle(
@@ -255,8 +256,6 @@ class _AlertDialogPendingState extends State<AlertDialogPending> {
                               for (var element in AlertDialogPending.helpers) {
                                 if (element.phoneNumber != helper.phoneNumber) {
                                   await u!.rejectRequest(element.phoneNumber);
-                                  print("ENTRATO");
-                                  print(element.phoneNumber);
                                 }
                               }
                               if (!mounted) return;

@@ -74,7 +74,6 @@ class User {
     var jsonFile = await getCurrentData();
     latitude = jsonFile["latitude"];
     longitude = jsonFile["longitude"];
-    print("$latitude $longitude");
   }
 
   getCurrentData() async {
@@ -310,8 +309,6 @@ class User {
   }
 
   static getDistance(User u1, User u2) {
-    print("ciao eheh ${u1.latitude} ${u1.longitude}");
-    print("ciao eheh2 ${u2.latitude} ${u2.longitude}");
     var userlat = u1.latitude;
     var userlon = u1.longitude;
     var reqlat = u2.latitude;
@@ -405,10 +402,9 @@ class User {
 
   Future<List> getReviews() async {
     var jsonFile = await getCurrentData();
+    // ignore: non_constant_identifier_names
     var review_list = jsonFile["review_list"];
     return review_list.isNotEmpty ? review_list : [];
-
-
   }
 
   uploadJson(Map jsonFile, String path, String filename) async {

@@ -1,10 +1,7 @@
-// ignore: file_names
+// ignore_for_file: file_names
 import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:nfc_manager/nfc_manager.dart';
-
-import '../main.dart';
 import '../screens/SignUpNumber.dart';
 import 'Status.dart';
 
@@ -17,26 +14,18 @@ Future<bool> isNFCAvailable() async {
 getNFC(BuildContext context) async {
   ValueNotifier<dynamic> result = ValueNotifier(null);
 
-  print("provo a leggere");
   NfcManager.instance.startSession(
     onDiscovered: (NfcTag tag) async {
       result.value = tag.data;
-      print("leggo");
-
-      print(result.value);
       await pushReview(context);
     },
   );
 }
 
 ndefWrite(BuildContext context) async {
-  print("provo a scrivre");
-
   ValueNotifier<dynamic> result = ValueNotifier(null);
   NfcManager.instance.startSession(onDiscovered: (NfcTag tag) async {
     var ndef = Ndef.from(tag);
-
-    print("scritto");
     if (ndef == null || !ndef.isWritable) {
       result.value = 'Tag is not ndef writable';
       NfcManager.instance.stopSession(errorMessage: result.value);
@@ -53,22 +42,19 @@ ndefWrite(BuildContext context) async {
     ]);
 
     try {
-      print("daje");
       await ndef.write(message);
       result.value = 'Success to "Ndef Write"';
       NfcManager.instance.stopSession();
     } catch (e) {
-      print("non daje");
-
       result.value = e;
       NfcManager.instance.stopSession(errorMessage: result.value.toString());
     }
+    // ignore: use_build_context_synchronously
     await pushReview(context);
   });
 }
 
 pushReview(BuildContext context) async {
-  print("pusho homepage");
   Status.setAllFalse();
   await u!.deleteProposalFiles();
   await u!.restoreJson();

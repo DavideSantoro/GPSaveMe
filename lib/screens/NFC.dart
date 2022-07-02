@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:first_prj/main.dart';
 import '../models/NFCMethods.dart';
-import '../models/Status.dart';
 import 'GenerateQR.dart';
 import 'GiveReview.dart';
 import 'SignUpNumber.dart';
