@@ -1,6 +1,5 @@
 // ignore_for_file: file_names
 import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:nfc_manager/nfc_manager.dart';
 import '../screens/SignUpNumber.dart';

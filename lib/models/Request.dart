@@ -1,6 +1,5 @@
 // ignore_for_file: file_names
 import 'dart:math';
-
 import 'package:first_prj/models/User.dart';
 
 class Request {
