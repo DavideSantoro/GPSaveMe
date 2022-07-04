@@ -70,18 +70,19 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    Status.areAllFalse() ? 'Tap below or shake to ask for help ' : "Your request recap",
-                    style: TextStyle(
+                    Status.areAllFalse()
+                        ? 'Tap below or shake to ask for help '
+                        : "Your request recap",
+                    style: const TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
                       color: Colors.white,
                     ),
                   ),
-                  ImageIcon(
-                    color: Colors.white,
-                    size: 37,
-                  AssetImage('images/shake.jpg')
-                  ),
+                  const ImageIcon(
+                      color: Colors.white,
+                      size: 37,
+                      AssetImage('images/shake.jpg')),
                 ],
               ),
             ),
@@ -400,7 +401,6 @@ class _DropDownListWithPicState extends State<DropDownListWithPic> {
         automaticallyImplyLeading: false,
         title: const Text("Test Drop"),
       ),
-      // ignore: unnecessary_new
       body: new Center(
         // ignore: sized_box_for_whitespace
         child: Container(
