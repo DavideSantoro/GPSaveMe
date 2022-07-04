@@ -6,6 +6,7 @@ import '../models/Status.dart';
 import 'SignUpNumber.dart';
 import 'package:first_prj/main.dart';
 import 'dart:math';
+import 'package:first_prj/main.dart';
 
 //import 'package:flutter_sms/flutter_sms.dart';
 
@@ -111,7 +112,7 @@ class _OtpSentPageState extends State<OtpSent> {
                               }
                               if (Status.waitingHelp) await u!.updateLocation();
                               await u!.getReviewRating();
-                              MyApp.coins = await u!.getCoins();
+                              MyApp.coins =  await u!.getCoins();
                               if (!mounted) return;
                               if (widget.otpTyped == widget.generatedOtp) {
                                 Navigator.of(context).push(MaterialPageRoute(

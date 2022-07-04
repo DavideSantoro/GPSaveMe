@@ -38,6 +38,8 @@ class Request {
   }
 
   String getDistance(userlat, userlon, reqlat, reqlon) {
+    print("$userlat $userlon sono le coordinate del primo");
+    print("$reqlat $reqlon sono le coordinate del secondo");
     var R = 6371; // Radius of the earth in km
     var dLat = deg2rad(reqlat - userlat); // deg2rad below
     var dLon = deg2rad(reqlon - userlon);
